@@ -18,10 +18,11 @@ export class StudentAddComponent implements OnInit {
   
   semesterList=[1,2,3,4,5,6,7,8];
   dataId : number;
-  genderList: string[] = ['Male','Feamle','Other'];
+  genderList: string[] = ['Male','Female','Other'];
   branchList: string[] = ['Computer Science Engineering', 'IT', 'Mechanical Engineering', 'Electrical Engineering',
   'Electronics & Communication Engineering','Civil Engineering','Biotechnology Engineering','Robotics Engineering',
 'Aeronautical Engineering'];
+courseList = ['Robotics','Mechatronics','abcd']
 filteredOptions: Observable<string[]>;
 
   profileForm = this.fb.group({
@@ -31,7 +32,8 @@ filteredOptions: Observable<string[]>;
     branch:['', Validators.required],
     gender:['', Validators.required],
     cgpa:['', [Validators.required, Validators.min(0), Validators.max(10)]],
-    admissionDate:['', Validators.required]
+    admissionDate:['', Validators.required],
+    course:['']
   });
 
   std = {id:null,firstName: null, lastName: null, semester: null ,gender:null,branch:null,cgpa:null,admissionDate:null};

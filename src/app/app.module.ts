@@ -21,7 +21,8 @@ import { FlexModule, FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
     MatDividerModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatRippleModule,
+    MatCheckboxModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ) 

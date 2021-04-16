@@ -1,7 +1,6 @@
 
 <div>
-   
-    <mat-toolbar color="primary">
+   <mat-toolbar color="primary">
         <button mat-icon-button class="example-icon" aria-label="Add student" title="Add Student" (click)="goToList()">
             <mat-icon>arrow_back</mat-icon>
         </button>
@@ -112,8 +111,16 @@
                                     </mat-radio-group>
                             </div>
                            
-                             <div fxFlex="30">
-                                </div>
+                            <div fxFlex="30">
+                                    <ul>
+                                    <li *ngFor="let data of courseList">
+                                        <mat-checkbox [(ngModel)]="std.course" formControlName="course" [value]="data">
+                                        {{data}}
+                                        </mat-checkbox>
+                                    </li>
+                                    </ul>
+
+                            </div>
                         </div>
             </mat-card-content> 
             <mat-card-actions fxLayout="row" fxLayoutAlign="end center">

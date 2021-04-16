@@ -1,9 +1,8 @@
 import { Student } from './student.model';
 
 export const STUDENT: Student[] = [
-  {id: 1, firstName: 'Hydrogen', lastName: "Hydrogen",semester: 3, gender:"Male", branch: "Civil Engineering",cgpa:90,admissionDate:1618514912169},
-      {id: 1, firstName: 'Hydrogen', lastName: "Hydrogen",semester: 3, gender:"Male", branch: "Civil Engineering",cgpa:90,admissionDate:1618514912169},
-      {id: 2, firstName: 'Helium', lastName: "Hydrogen", semester: 2, gender:"Male", branch: "Civil Engineering",cgpa:90,admissionDate:1618514912169},
-      {id: 3, firstName: 'Lithium', lastName: "Hydrogen",  semester: 6, gender:"Male", branch: "Civil Engineering",cgpa:90,admissionDate:1618514912169}
-    
+    {id: 1, firstName: 'John', lastName: "Doe",semester: 3, gender:"Male", branch: "Civil Engineering",cgpa:9,admissionDate:1618514912169},
+    {id: 2, firstName: 'Ron', lastName: "Weasley",semester: 3, gender:"Male", branch: "Mechanical Engineering",cgpa:8,admissionDate:1618514912169},
+    {id: 3, firstName: 'Hermione', lastName: "Granger", semester: 2, gender:"Female", branch: "Computer Science Engineering",cgpa:7,admissionDate:1618514912169},
+    {id: 4, firstName: 'Albus', lastName: "Dumbledore",  semester: 6, gender:"Male", branch: "Aeronautical Engineering",cgpa:6,admissionDate:1618514912169}
 ]
