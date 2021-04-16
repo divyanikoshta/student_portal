@@ -22,7 +22,6 @@ export class StudentAddComponent implements OnInit {
   branchList: string[] = ['Computer Science Engineering', 'IT', 'Mechanical Engineering', 'Electrical Engineering',
   'Electronics & Communication Engineering','Civil Engineering','Biotechnology Engineering','Robotics Engineering',
 'Aeronautical Engineering'];
-courseList = ['Robotics','Mechatronics','abcd']
 filteredOptions: Observable<string[]>;
 
   profileForm = this.fb.group({
@@ -32,8 +31,7 @@ filteredOptions: Observable<string[]>;
     branch:['', Validators.required],
     gender:['', Validators.required],
     cgpa:['', [Validators.required, Validators.min(0), Validators.max(10)]],
-    admissionDate:['', Validators.required],
-    course:['']
+    admissionDate:['', Validators.required]
   });
 
   std = {id:null,firstName: null, lastName: null, semester: null ,gender:null,branch:null,cgpa:null,admissionDate:null};
@@ -59,8 +57,7 @@ filteredOptions: Observable<string[]>;
     this.studentService.getStudentById(id).subscribe(data => {
       this.std =  data;
       this.std.admissionDate = new Date(this.std.admissionDate);
-      console.log(data);
-    })
+   })
   }
 
   private _filter(value: string): string[] {
@@ -73,13 +70,11 @@ filteredOptions: Observable<string[]>;
   }
 
   onSubmit(): void {
-    console.log("this.std--",this.std);
     if(!this.dataId){
       this.studentService.addStudent(this.std as any).subscribe(data => { this.goToList()});
     }else{
       this.studentService.updateStudent(this.std as any).subscribe(data => { this.goToList()});
     }
-   // 
   }
 
 
