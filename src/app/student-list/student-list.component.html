@@ -1,0 +1,60 @@
+<div>
+    <mat-toolbar color="primary">
+      <span>Student List</span>
+      <span class="example-spacer" ></span>
+      <button mat-icon-button class="example-icon" aria-label="Add student" title="Add Student" (click)="addStudent()">
+        <mat-icon>add_circle_outline</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div class="container">
+      <table mat-table [dataSource]="dataSource">
+        
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Id </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}}</td>
+        </ng-container>
+        
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstName}} {{element.lastName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef> Gender </th>
+            <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+          </ng-container>
+      
+        <ng-container matColumnDef="semester">
+          <th mat-header-cell *matHeaderCellDef> Semester </th>
+          <td mat-cell *matCellDef="let element"> {{element.semester}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="branch">
+          <th mat-header-cell *matHeaderCellDef> Branch </th>
+          <td mat-cell *matCellDef="let element"> {{element.branch}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="admissionDate">
+            <th mat-header-cell *matHeaderCellDef> Admission Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.admissionDate | date :'mediumDate'}} </td>
+          </ng-container>
+      
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let element"> 
+              <button mat-icon-button (click)="editStudent(element)" title="Edit">
+                  <mat-icon inline="true" class="icon">edit</mat-icon>
+                </button>
+
+              <button mat-icon-button (click)="deleteStudent(element)" title="Delete">
+                  <mat-icon inline="true" class="icon">delete</mat-icon>
+                </button>
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="table-row"></tr>
+      </table>
+  </div>
+</div>  

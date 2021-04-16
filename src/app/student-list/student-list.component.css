@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .container{
+    overflow: auto;
+    height: calc(100vh - 77px);
+    box-shadow: none;
+  }
+  .table-row:hover .detail-btn {
+    background: white;
+    border-bottom: 3px solid #2f709ede;
+    border-radius: 3px 3px 0px 0px;
+    cursor: pointer;
+}
+
+.table-row:hover {
+  background: #f3f3f2;
+}
+
+
